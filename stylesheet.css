@@ -195,3 +195,9 @@ display: inline-block, none;
 	text-align: center;
 	font-size: .8em;
 }
+.donation {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+}
