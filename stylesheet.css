@@ -196,9 +196,7 @@ display: inline-block, none;
 	font-size: .8em;
 }
 .donation {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-font-size: 1.6em;
+  margin: auto;
+  max-width: 200px;
+  font-size: 1.6em;
 }
