@@ -24,10 +24,16 @@
 <div id="top"></div>
 <div id="fullpage">
 <input type="checkbox" id="text"></input>
+
+<!--jump button to other cities-->
 <div id="except">
 	<a href="#exception" href=”/goal/example” onclick=”javascript:pageTracker._trackPageview (‘example’);”target=”blank”>except<br>these<br>locations<br>outside<br>Seoul</a>
 </div>
+
+<!--YES/NO for today-->
 <h1 id="todayanswer"></h1>
+
+<!--countdown clock-->
 <div id="clockdiv">
   <div>
     <span class="hours"></span>
@@ -40,15 +46,57 @@
   </div>
 </div>
 <p id="opcl"></p>
+
+<!--next week result-->
 <p class="col-12 tomorrow">AND THIS COMING SUNDAY, THEY ARE</p>
 <h1 class="col-12" id="thissunday"></h1>
 <p class="col-12 emart">(and so are E-Mart, Lotte Mart and CostCo in Seoul)</p>
-<p class="col-12 contact">for suggestions or comments, please email jake@ishomeplusopen.com</p>
 
-<div class="donation">
+<!--donation button-->
+<p class="col-12 donate">Help make a difference today by supporting these organizations.</p>
+
+<a href="" class="col-6 button" id="ngo"></a>
+<a href="" class="col-6 button" id="ngo2"></a>
+<script>
+(function() {
+      var ngos = [
+        {
+          text: "Korea Legacy Committee",
+          url: "https://korealegacy.give.asia/campaign/klc-help-feed-our-elder#/",
+          text2: "DDing Dong",
+          url2: "https://www.globalgiving.org/projects/rainbow-teen-safe-space/"
+        },
+        {
+          text: "GongGam",
+          url: "https://www.kpil.org/about-us/",
+          text2: "Migrants Trade Union",
+          url2: "http://mtu.or.kr/"
+        },
+        {
+          text: "Korean Unwed Mothers Families Association",
+          url: "https://kumfa.or.kr/donation/",
+          text2: "Women with Disabilities Empathy",
+          url2: "https://wde.or.kr/"
+        },
+        {
+          text: "Advocates for Public Interest Law",
+          url: "http://apil.or.kr/?page_id=10387",
+          text2: "NAOMI Center",
+          url2: "https://www.facebook.com/naomicenterjeju/"
+        }
+      ];
+      var ngo = ngos[Math.floor(Math.random() * ngos.length)];
+      document.getElementById("ngo").innerHTML = ngo.text
+      document.getElementById("ngo").href = ngo.url
+      document.getElementById("ngo2").innerHTML = ngo.text2
+      document.getElementById("ngo2").href = ngo.url2
+    })();
+</script>
+
+<!--contact-->
+<p class="col-12 contact">for suggestions or comments, please email jake@ishomeplusopen.com</p>
 	
-</div>
-	
+<!--break jump-->
 <div class="break"></div>
 	
 <div class="col-12 easter">
@@ -57,6 +105,7 @@
 	
 <div class="break"></div>
 	
+<!--locations outside seoul-->
 <p class="col-12 emart">except these locations outside Seoul</p>
 <div id="overlay">
 	<div class="square">
@@ -110,7 +159,7 @@
 				<li>kintex</li>
 				<li>paju munsan</li>				
 				<li>pocheon songwu</li>	
-				<li>pyungchon</li>
+				<li>pyeongchon</li>
 				<li>wonju</li>															
 			</ul>
 		</div>		
@@ -132,6 +181,8 @@
 	</div>	
 <p class="col-12 lastline">if your location isn't here, it has the same schedule as Seoul.</p>
 </div>
+
+<!--javascript portion starts here-->
 <script>
 var d = new Date();
 var currHours = d.getHours();
@@ -153,6 +204,7 @@ if (tokens[0] === "Sun" || currHours <= 9) {
 else {
 	var yn = "YES"
 }
+
 if (yn === "NO" || currHours >= 23 || currHours <= 9) {
 	document.getElementById("elevenanswer").innerHTML = "THESE LOCATIONS ARE CLOSED NOW"
 }
@@ -200,6 +252,7 @@ if (tokens[0] === "Wed" || currHours <=9) {
 else {
 	var yn2 = "THESE LOCATIONS ARE OPEN NOW"
 }
+
 document.getElementById("wednesdayanswer").innerHTML = yn2;
 var td = new Date(); 
 var nextSunday= new Date(td.getFullYear(),td.getMonth(),td.getDate()+(7-td.getDay())) 
@@ -217,6 +270,7 @@ var y = nextSunday.toString();
 	};
 document.getElementById("thissunday").innerHTML = comingsundayanswer
 
+//this is the clock
 function getTimeRemaining() {
   var t = new Date();
   var seconds = 59-t.getSeconds();
