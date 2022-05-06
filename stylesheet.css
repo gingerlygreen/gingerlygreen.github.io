@@ -47,7 +47,6 @@ a:link, a:visited {
 	font-size: 1em;
 	line-height: 20px;
 	text-align: center;
-	float: top;
 }
 
 #top {
@@ -158,7 +157,6 @@ ul {
 	margin-bottom: 45px;
 }
 
-
 #clockdiv {
 font-size:30px;
 margin: 2% auto 2% auto;
@@ -185,8 +183,14 @@ display: inline-block, none;
 	text-align: center;
 	font-size: 1.5em;
 }
-.contact {
+.donate {
 	margin-top: 0px;
+	text-align: center;
+	font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.contact {
+	margin-top: 50px;
 	text-align: center;
 	font-size: 1em;
 }
@@ -195,8 +199,17 @@ display: inline-block, none;
 	text-align: center;
 	font-size: .8em;
 }
-.donation {
-  margin: auto;
-  max-width: 200px;
-  font-size: 1.6em;
+
+#ngo {
+text-align: center;
+display: inline-block, none;
+font-size: 1.8em;
+padding: 0.4em;
+}
+
+#ngo2 {
+text-align: center;
+display: inline-block, none;
+font-size: 1.8em;
+padding: 0.4em 0.4em;
 }
